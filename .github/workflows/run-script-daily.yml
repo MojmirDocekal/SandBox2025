@@ -2,7 +2,7 @@ name: Run Python script daily
 
 on:
   schedule:
-    - cron: '0 0 * * *' # runs at 00:00 UTC every day
+    - cron: '0 0 * * *'
   workflow_dispatch:
 
 jobs:
@@ -15,12 +15,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.x' # Change to your required Python version
-
-      - name: Install dependencies
-        run: |
-          pip install -r requirements.txt
-          # Add any other setup commands you need
+          python-version: '3.x'
 
       - name: Run your script
         run: python ~/remove_old_files.py
